@@ -8,7 +8,9 @@ COPY ./settings.gradle ./
 COPY ./gradlew ./
 COPY ./src src
 
-RUN /app/gradlew build -x test
+RUN chmod +x /app/gradlew
+
+RUN /app/gradlew clean build
 
 
 FROM bellsoft/liberica-openjre-alpine-musl:17
